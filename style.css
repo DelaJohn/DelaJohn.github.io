@@ -1,0 +1,706 @@
+/* ---------------------------------
+   Midnight Brunch Landing Page
+   Style Sheet
+   --------------------------------- */
+
+/* ==============
+   0. RESET / BASE
+   ============== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Core brand colors */
+  --bg-deep: #000000;
+  --bg-panel: rgba(10, 10, 20, 0.6); /* for glassy cards */
+  --text-main: #ededed;
+  --text-dim: rgba(237, 237, 237, 0.65);
+
+  --blue-neon: #00ffff;
+  --magenta-neon: #ff00ff;
+
+  /* accent shadows / glows */
+  --blue-glow: 0 0 25px rgba(0, 255, 255, 0.6),
+               0 0 60px rgba(0, 255, 255, 0.3);
+  --magenta-glow: 0 0 25px rgba(255, 0, 255, 0.5),
+                  0 0 60px rgba(255, 0, 255, 0.25);
+
+  --radius-card: 16px;
+  --radius-btn: 8px;
+
+  --font-display: "Cinzel", serif;   /* headings */
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  min-height: 100%;
+}
+
+/* Utility helpers */
+.section-inner,
+.tickets-inner,
+.footer-inner {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+/* Headings */
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.dish-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+}
+
+.section-body {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 50ch;
+}
+
+.img-caption {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------------------------------
+   1. HERO SECTION
+   --------------------------------- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 30% 20%,
+      rgba(0, 255, 255, 0.2) 0%,
+      rgba(255, 0, 255, 0.05) 40%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(255, 0, 255, 0.25) 0%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    var(--bg-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+  overflow: hidden;
+}
+
+/* faint film grain overlay vibe */
+.hero .overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 70%
+  );
+  z-index: 1;
+}
+
+/* NAV BAR */
+.nav {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0,255,255,0.7));
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  letter-spacing: 0.07em;
+}
+
+.nav-cta {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--magenta-neon);
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: var(--magenta-glow);
+  transition: all 0.15s linear;
+}
+
+.nav-cta:hover {
+  background: rgba(255, 0, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 1vw + 1.5rem, 3rem);
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  letter-spacing: 0.15em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-shadow: 0 0 10px rgba(255,0,255,0.4);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-details {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* Main call to action button */
+.primary-cta {
+  display: inline-block;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 0, 255, 0.4) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  border: 1px solid var(--magenta-neon);
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+  box-shadow: var(--magenta-glow);
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  transition: all 0.15s linear;
+}
+
+.primary-cta:hover {
+  background: rgba(255,0,255,0.08);
+  box-shadow: 0 0 40px rgba(255,0,255,0.7);
+}
+
+.note-limited {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+/* ---------------------------------
+   2. ABOUT SECTION
+   --------------------------------- */
+
+.about {
+  padding: 4rem 0 3rem;
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0,255,255,0.08) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255,0,255,0.07) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    var(--bg-deep);
+}
+
+.about .section-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.about-text .event-highlights {
+  margin-top: 1rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.about-text .event-highlights li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.about-text .event-highlights li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+}
+
+.about-image-card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8),
+              0 0 60px rgba(0,255,255,0.12),
+              0 0 120px rgba(255,0,255,0.08);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+/* ---------------------------------
+   3. MENU PREVIEW
+   --------------------------------- */
+
+.menu-preview {
+  padding: 4rem 0 3rem;
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(255,0,255,0.08) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(0,255,255,0.08) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    var(--bg-deep);
+}
+
+.menu-preview .section-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.menu-items {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.menu-item .dish-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin-top: 0.35rem;
+}
+
+.menu-image-card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8),
+              0 0 60px rgba(0,255,255,0.12),
+              0 0 120px rgba(255,0,255,0.08);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+}
+
+.menu-image {
+  width: 100%;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+/* ---------------------------------
+   4. TEAM / EXPERIENCE
+   --------------------------------- */
+
+.team {
+  padding: 4rem 0 3rem;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(0,255,255,0.06) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    var(--bg-deep);
+}
+
+.team .section-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.team-image-card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8),
+              0 0 60px rgba(0,255,255,0.12),
+              0 0 120px rgba(255,0,255,0.08);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+}
+
+.team-image {
+  width: 100%;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+.team-text .team-line {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+  line-height: 1.4;
+}
+
+/* ---------------------------------
+   5. TICKETS / FORM
+   --------------------------------- */
+
+.tickets {
+  position: relative;
+  padding: 4rem 0 4rem;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,0,255,0.12) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    radial-gradient(
+      circle at 60% 70%,
+      rgba(0,255,255,0.1) 0%,
+      rgba(0,0,0,0) 70%
+    ),
+    var(--bg-deep);
+}
+
+.tickets-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.tickets-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(10,10,20,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-card);
+  box-shadow:
+    0 30px 100px rgba(0,0,0,0.9),
+    0 0 60px rgba(0,255,255,0.14),
+    0 0 160px rgba(255,0,255,0.12);
+  padding: 2rem 1.5rem;
+  text-align: left;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.tickets-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.tickets-details {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tickets-details li + li {
+  margin-top: 0.4rem;
+}
+
+.tickets-details strong {
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+  font-weight: 500;
+}
+
+/* FORM */
+.tickets-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.input-email {
+  flex: 1;
+  min-width: 0;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-btn);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.8rem 0.9rem;
+  outline: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.9);
+}
+
+.input-email:focus {
+  border-color: var(--blue-neon);
+  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 40px rgba(0,255,255,0.3);
+}
+
+.btn-reserve {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0,255,255,0.4) 0%,
+    rgba(0,0,0,0) 70%
+  );
+  border: 1px solid var(--blue-neon);
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  box-shadow: var(--blue-glow);
+  border-radius: var(--radius-btn);
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  flex-shrink: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.btn-reserve:hover {
+  background-color: rgba(0,255,255,0.08);
+  box-shadow: 0 0 40px rgba(0,255,255,0.7);
+}
+
+.form-hint {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  max-width: 32ch;
+}
+
+/* ---------------------------------
+   6. FOOTER
+   --------------------------------- */
+
+.footer {
+  background-color: #000000;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 2.5rem 0 4rem;
+  position: relative;
+  background-image: radial-gradient(
+    circle at 50% -10%,
+    rgba(255, 0, 255, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0,255,255,0.7));
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--blue-neon);
+  text-shadow: var(--blue-glow);
+  letter-spacing: 0.07em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--text-main);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.15s linear, text-shadow 0.15s linear;
+}
+
+.footer-links a:hover {
+  color: var(--magenta-neon);
+  text-shadow: var(--magenta-glow);
+}
+
+.footer-legal {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  max-width: 50ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------------------------------
+   7. RESPONSIVE LAYOUT
+   --------------------------------- */
+
+/* On wider screens, put sections into 2-column layouts
+   (image/text side by side) */
+@media (min-width: 768px) {
+  .about .section-inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .menu-preview .section-inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  .team .section-inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 1vw + 2rem, 3.5rem);
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-details {
+    font-size: 1rem;
+  }
+
+  .primary-cta {
+    font-size: 1rem;
+  }
+
+  .note-limited {
+    font-size: 0.8rem;
+  }
+
+  .tickets-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .tickets-heading {
+    font-size: 1.75rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.75rem, 1vw + 1.25rem, 2.25rem);
+  }
+}

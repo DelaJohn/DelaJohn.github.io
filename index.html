@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Brunch — Where the Night Meets the Bite</title>
+
+  <!-- META for socials / preview -->
+  <meta name="description" content="A neon late-night dining experience. Dec 15 · 11 PM – 3 AM · Downtown Calgary. Limited seats." />
+  <meta property="og:title" content="Midnight Brunch" />
+  <meta property="og:description" content="Where the Night Meets the Bite. Reserve before we sell out." />
+  <meta property="og:image" content="assets/hero-bg.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- You can swap these fonts later to Cinzel Decorative + Adobe Clean equivalents.
+       For dev preview we’ll use Cinzel + Inter (Google Fonts, free). -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- ===========================
+       HERO / CTA
+  ============================ -->
+  <header class="hero" id="top">
+    <div class="overlay"></div>
+
+    <nav class="nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Midnight Brunch logo" class="logo" />
+        <span class="brand-text">MIDNIGHT BRUNCH</span>
+      </div>
+
+      <a class="nav-cta" href="#tickets">
+        Reserve Seat
+      </a>
+    </nav>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        MIDNIGHT BRUNCH
+      </h1>
+
+      <p class="hero-tagline">
+        Where the Night Meets the Bite
+      </p>
+
+      <p class="hero-details">
+        Dec 15 · 11 PM – 3 AM<br />
+        Downtown Calgary · Secret Location
+      </p>
+
+      <a class="primary-cta" href="#tickets">
+        Get Tickets
+      </a>
+
+      <p class="note-limited">
+        Limited seats · 19+
+      </p>
+    </div>
+  </header>
+
+  <!-- ===========================
+       SECTION: WHAT IS THIS
+  ============================ -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-text">
+        <h2 class="section-heading">
+          A late-night dining event for people who don't go home early.
+        </h2>
+        <p class="section-body">
+          Midnight Brunch is a one-night-only, after-hours dining experience.
+          Neon atmosphere. Curated menu. Low light. High energy.
+          Think fine dining meets night culture.
+        </p>
+
+        <ul class="event-highlights">
+          <li>Signature brunch-inspired menu served after 11 PM</li>
+          <li>Live ambient set — not loud, just immersive</li>
+          <li>Dress code: black with a hint of glow</li>
+          <li>Secret venue revealed day-of</li>
+        </ul>
+      </div>
+
+      <div class="about-image-card">
+        <img
+          src="assets/venue.jpg"
+          alt="Moody neon-lit venue interior with magenta and blue glow"
+          class="about-image"
+        />
+        <p class="img-caption">Your table, lit by cyan + magenta glow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       SECTION: MENU PREVIEW
+  ============================ -->
+  <section class="menu-preview" id="menu">
+    <div class="section-inner">
+      <div class="menu-text">
+        <h2 class="section-heading">
+          The Midnight Menu
+        </h2>
+        <p class="section-body">
+          Familiar comfort, flipped for the hour. Here’s a taste:
+        </p>
+
+        <div class="menu-items">
+          <div class="menu-item">
+            <h3 class="dish-name">Luminous Toast</h3>
+            <p class="dish-desc">Avocado · Citrus Zest · Chili Flake · Charcoal Sourdough</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="dish-name">Moonlight Benedict</h3>
+            <p class="dish-desc">Poached Egg · Smoked Salmon · Truffle Hollandaise</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="dish-name">Neon Stacks</h3>
+            <p class="dish-desc">Buttermilk Pancakes · Maple Syrup · Caramelized Banana</p>
+          </div>
+
+          <div class="menu-item">
+            <h3 class="dish-name">After-Hours Latte</h3>
+            <p class="dish-desc">Cold Brew · Vanilla Foam · Espresso Dust</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-image-card">
+        <img
+          src="assets/menu.jpg"
+          alt="Close-up of plated brunch dish under neon lighting"
+          class="menu-image"
+        />
+        <p class="img-caption">Crafted in the dark. Made to glow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       SECTION: EXPERIENCE / TEAM
+  ============================ -->
+  <section class="team" id="team">
+    <div class="section-inner">
+      <div class="team-image-card">
+        <img
+          src="assets/chef.jpg"
+          alt="Chef plating under electric blue and magenta light"
+          class="team-image"
+        />
+      </div>
+
+      <div class="team-text">
+        <h2 class="section-heading">
+          Crafted by night.
+        </h2>
+        <p class="section-body">
+          Our kitchen runs under glow. Every plate is finished by hand,
+          built for people who live in that in-between time after the city slows
+          down but before the night dies.
+        </p>
+
+        <p class="team-line">
+          “The light doesn’t just happen. We build it.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       SECTION: EVENT DETAILS / TICKETS
+  ============================ -->
+  <section class="tickets" id="tickets" aria-labelledby="tickets-heading">
+    <div class="tickets-inner">
+      <div class="tickets-card">
+        <h2 class="tickets-heading" id="tickets-heading">
+          Reserve Your Seat
+        </h2>
+
+        <ul class="tickets-details">
+          <li><strong>Date:</strong> Dec 15, 2025</li>
+          <li><strong>Time:</strong> 11 PM – 3 AM</li>
+          <li><strong>Location:</strong> Downtown Calgary (revealed via email)</li>
+          <li><strong>Dress Code:</strong> Black w/ a hint of neon</li>
+          <li><strong>Age:</strong> 19+</li>
+        </ul>
+
+        <form class="tickets-form" action="#" method="post">
+          <label class="form-label" for="email">Get notified when seats open:</label>
+          <div class="form-row">
+            <input
+              id="email"
+              name="email"
+              class="input-email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+            <button class="btn-reserve" type="submit">
+              Notify Me
+            </button>
+          </div>
+          <p class="form-hint">We’ll email you venue details + ticket link.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+  ============================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="" class="footer-logo" />
+        <p class="footer-name">MIDNIGHT BRUNCH</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#tickets">Reserve</a></li>
+        <li><a href="#top">Back to top ↑</a></li>
+      </ul>
+
+      <p class="footer-legal">
+        © 2025 Midnight Brunch. All rights reserved.  
+        “Where the Night Meets the Bite.”
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
