@@ -29,28 +29,27 @@
 
   <!-- HERO -->
   <main>
-    <section class="hero container">
-      <div class="hero-text">
-        <p class="eyebrow">Graphic Designer</p>
-        <h1>John Dela Peña</h1>
+    <section class="hero hero-minimal fade-in">
+      <div class="container hero-minimal-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Graphic Designer</p>
+          <h1>John Dela Peña</h1>
 
-        <p class="hero-description">
-          Designer focused on branding, digital experiences, and culture-driven visuals.
-        </p>
+          <p class="hero-description">
+            I design branding and digital experiences shaped by culture, music, and snowboarding.
+            Focused on creating work that feels natural, expressive, and real.
+          </p>
 
-        <div class="hero-actions">
-          <a class="button" href="#projects">View Projects</a>
-          <a class="button button-secondary" href="mailto:Johnasdp@gmail.com">Contact Me</a>
+          <div class="hero-actions">
+            <a class="button" href="#projects">View Projects</a>
+            <a class="button button-secondary" href="#about">About Me</a>
+          </div>
         </div>
-      </div>
-
-      <div class="hero-image">
-        <img src="images/profile.jpg" alt="John Dela Peña" />
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="projects-section container">
+    <section id="projects" class="projects-section container fade-in">
       <div class="section-heading">
         <p class="eyebrow">Selected Work</p>
         <h2>Projects</h2>
@@ -60,28 +59,28 @@
 
         <!-- BLACKTAPE -->
         <a class="project-card" href="./projects/blacktape.html">
-          <img src="images/blacktape/blacktape-1.png" alt="black.tape preview" />
+          <img src="images/blacktape/blacktape-thumb.png" alt="black.tape preview" />
           <div class="project-card-content">
             <h3>black.tape</h3>
-            <p>Underground music platform identity.</p>
+            <p>A raw identity built around underground DJ culture.</p>
           </div>
         </a>
 
         <!-- FIFTY50 -->
         <a class="project-card" href="./projects/fifty50.html">
-          <img src="images/fifty50/fifty50-1.png" alt="50-50 preview" />
+          <img src="images/fifty50/fifty50-thumb.png" alt="50-50 preview" />
           <div class="project-card-content">
             <h3>50-50</h3>
-            <p>Snowboard apparel brand concept.</p>
+            <p>A snowboard brand focused on style, progression, and street influence.</p>
           </div>
         </a>
 
         <!-- SHEESH -->
         <a class="project-card" href="./projects/sheesh.html">
-          <img src="images/sheesh/sheesh-1.png" alt="Sheesh preview" />
+          <img src="images/sheesh/sheesh-thumb.png" alt="Sheesh preview" />
           <div class="project-card-content">
             <h3>Sheesh</h3>
-            <p>Streetwear brand identity.</p>
+            <p>A streetwear concept built around reaction, attitude, and expression.</p>
           </div>
         </a>
 
@@ -90,16 +89,16 @@
           <img src="images/commercial-thumb.png" alt="Lemon Energy Drink commercial preview" />
           <div class="project-card-content">
             <h3>Lemon Energy Drink</h3>
-            <p>Short-form commercial project.</p>
+            <p>A short commercial built around energy, pacing, and product presence.</p>
           </div>
         </a>
 
         <!-- APP -->
         <a class="project-card" href="./projects/app.html">
-          <img src="images/app/learnloop-1.png" alt="LearnLoop preview" />
+          <img src="images/app/learnloop-thumb.png" alt="LearnLoop preview" />
           <div class="project-card-content">
             <h3>LearnLoop</h3>
-            <p>Educational app inspired by TikTok + Duolingo.</p>
+            <p>A learning app designed to feel as engaging as scrolling.</p>
           </div>
         </a>
 
@@ -107,16 +106,35 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about-section container">
+    <section id="about" class="about-section container fade-in">
       <div class="section-heading">
         <p class="eyebrow">About</p>
         <h2>About Me</h2>
       </div>
 
-      <p class="about-text">
-        I’m a graphic designer focused on branding, digital experiences, and visual storytelling.
-        My work explores culture, identity, and creating design systems that feel intentional and refined.
-      </p>
+      <div class="about-layout">
+        <div class="about-image">
+          <img src="images/profile.jpg" alt="Portrait of John Dela Peña" />
+        </div>
+
+        <div class="about-content">
+          <p>
+            I’m a graphic designer interested in branding, digital experiences, and visual storytelling.
+            A lot of my work is influenced by things I’m into like music, snowboarding, and digital culture.
+          </p>
+
+          <p>
+            I create work that feels intentional, expressive, and connected to real people.
+            Whether I’m building a brand system, designing an interface, or working on motion, I want the final result
+            to feel clean, memorable, and grounded in a strong idea.
+          </p>
+
+          <p>
+            I also built this portfolio myself using HTML and CSS in Visual Studio Code, then published it through GitHub Pages.
+            Doing it this way gave me full control over the structure, layout, and how my work is presented.
+          </p>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -130,17 +148,17 @@
   </footer>
 
   <script>
-  const elements = document.querySelectorAll('.fade-in');
+    const elements = document.querySelectorAll('.fade-in');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
     });
-  });
 
-  elements.forEach(el => observer.observe(el));
-</script>
+    elements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
